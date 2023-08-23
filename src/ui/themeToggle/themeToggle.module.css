@@ -1,0 +1,25 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.iconContainer {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--background-secondary);
+  transition: all 1s ease;
+}
+
+.mainContainer button {
+  background-color: transparent;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}

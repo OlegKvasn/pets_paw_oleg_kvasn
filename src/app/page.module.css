@@ -1,3 +1,25 @@
 .main {
-  display: flex;
+  flex: 1;
+  padding-left: 2%;
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  height: 93vh;
+  background-color: var(--background-home-page);
+  border-radius: var(--border-radius);
+  transition: all 1s ease;
+}
+
+.imageContainer {
+  width: 110%;
+  aspect-ratio: 775/900;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+}
+
+.image {
+  object-fit: cover;
 }

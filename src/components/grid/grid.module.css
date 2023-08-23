@@ -1,0 +1,21 @@
+.gridContainer {
+  display: grid;
+  grid-auto-flow: row;
+  /* grid-template-columns: repeat(6, 1fr); */
+  grid-template-columns: repeat(3, minmax(0, 800px));
+  /* grid-template-columns: repeat(auto-fill, minmax(400px, auto)); */
+  gap: 10px;
+  padding: 10px 0;
+  background-color: var(--background-white);
+}
+
+.gridItem {
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1023px) {
+}
+
+@media screen and (max-width: 767px) {
+}
