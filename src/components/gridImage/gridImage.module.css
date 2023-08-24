@@ -1,0 +1,59 @@
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-pink);
+  border-radius: var(--border-radius);
+}
+
+.imageContainer a {
+  cursor: pointer;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  transition: all 0.5s ease;
+}
+
+.title {
+  width: 90%;
+  font-size: 16px;
+  font-weight: var(--font-weight-secondary);
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  color: var(--color-pink);
+  background-color: var(--background-primary);
+  border-radius: var(--border-radius);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.iconButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--background-primary);
+  opacity: 0 !important;
+  transition: all 0.5s ease;
+}
+
+.imageContainer:hover .title {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.imageContainer:hover .iconButton {
+  opacity: 1 !important;
+  transition: all 0.5s ease;
+}
+
+.imageContainer:hover .image {
+  filter: opacity(0.5);
+  transition: all 0.5s ease;
+}

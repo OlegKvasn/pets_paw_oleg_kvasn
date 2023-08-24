@@ -1,0 +1,35 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+.buttons {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.selectBreeds {
+  width: 30% !important;
+}
+
+.sortButton {
+  background-color: var(--background-primary);
+  border: 2px solid transparent;
+}
+
+.sortIcon {
+  fill: var(--color-gray);
+}
+
+.sortButton:hover {
+  border: 2px solid var(--background-pink);
+}
+
+.sortButton:hover .sortIcon {
+  fill: var(--color-pink);
+}

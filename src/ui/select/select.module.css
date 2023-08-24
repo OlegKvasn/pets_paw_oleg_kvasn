@@ -1,0 +1,33 @@
+.select {
+  padding: 0 20px;
+  border-radius: var(--border-radius-small);
+  /* width: 100%; */
+  border: 2px solid transparent;
+  background-color: var(--background-primary);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray);
+  transition: all 0.5s ease;
+}
+
+.select:hover {
+  border: 2px solid var(--background-pink);
+  outline-offset: 0px;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.select:focus {
+  border: 2px solid var(--color-pink);
+  outline-offset: 0px;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.option {
+  padding: 20px;
+  background-color: var(--background-primary);
+}
+.option:hover {
+  background-color: var(--background-secondary);
+}
