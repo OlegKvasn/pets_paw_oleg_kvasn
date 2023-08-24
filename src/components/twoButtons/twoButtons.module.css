@@ -1,0 +1,25 @@
+.backButton {
+  background-color: var(--background-pink);
+}
+
+.backButton:hover {
+  background-color: var(--color-pink);
+  transition: all 0.5s ease;
+}
+
+.backButton:hover .icon {
+  fill: #fff;
+  transition: all 0.5s ease;
+}
+
+.navButton {
+  background-color: var(--color-pink);
+  color: #fff;
+  font-size: 20px;
+}
+
+.navButton:hover {
+  background-color: var(--background-pink);
+  transition: all 0.5s ease;
+  color: var(--text-color-primary);
+}

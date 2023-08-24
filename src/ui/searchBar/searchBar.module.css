@@ -1,0 +1,65 @@
+.container {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  padding: 15px;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--background-secondary);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-color-primary);
+  transition: all 0.5s ease;
+}
+
+.input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-gray);
+  transition: all 0.5s ease;
+}
+
+.input:hover {
+  border: 2px solid var(--background-pink);
+  outline-offset: 0px;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.input:hover::placeholder {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.input:focus {
+  border: 2px solid var(--color-pink);
+  outline-offset: 0px;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.input:focus::placeholder {
+  color: var(--text-color-primary);
+  transition: all 0.5s ease;
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--background-pink);
+}
+
+.button:hover {
+  background-color: var(--color-pink);
+  transition: all 0.5s ease;
+}
+
+.button:hover .icon {
+  fill: #fff;
+  transition: all 0.5s ease;
+}

@@ -1,6 +1,7 @@
 :root {
   --max-width: 1440px;
   --border-radius: 20px;
+  --border-radius-small: 10px;
   --font-weight-primary: 500;
   --font-weight-secondary: 400;
   --background-dark-gray: #c4c4c4;
@@ -16,6 +17,7 @@
   --background-primary: #f8f8f7;
   --background-secondary: #fff;
   --background-home-page: #ff868e;
+  --background-pink: #fbe0dc;
   --text-color-primary: #1d1d1d;
 }
 
@@ -23,6 +25,7 @@
   --background-primary: #1d1d1d;
   --background-secondary: #ffffff05;
   --background-home-page: #ffffff05;
+  --background-pink: #ff868e33;
   --text-color-primary: #fff;
 }
 

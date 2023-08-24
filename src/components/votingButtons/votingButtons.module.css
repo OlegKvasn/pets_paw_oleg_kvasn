@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+}
+
+.container button {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--background-secondary);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.likeIcon,
+.favIcon,
+.dislikeIcon {
+  fill: #fff;
+  transition: all 0.5s ease;
+}
+
+.likeButton {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  background-color: var(--color-green);
+}
+
+.likeButton:hover {
+  background-color: #97eab94d;
+  transition: all 0.5s ease;
+}
+
+.likeButton:hover .likeIcon {
+  fill: var(--color-green);
+  transition: all 0.5s ease;
+}
+
+.favButton {
+  background-color: var(--color-pink);
+}
+
+.favButton:hover {
+  background-color: #ff868e4d;
+  transition: all 0.5s ease;
+}
+
+.favButton:hover .favIcon {
+  fill: var(--color-pink);
+  transition: all 0.5s ease;
+}
+
+.dislikeButton {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  background-color: var(--color-yellow);
+}
+
+.dislikeButton:hover {
+  background-color: #ffd2804d;
+  transition: all 0.5s ease;
+}
+
+.dislikeButton:hover .dislikeIcon {
+  fill: var(--color-yellow);
+  transition: all 0.5s ease;
+}

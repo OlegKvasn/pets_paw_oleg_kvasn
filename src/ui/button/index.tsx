@@ -1,7 +1,21 @@
 import styles from "./button.module.css";
 
-const Button = ({ children }: { children: React.ReactNode }) => {
-  return <button type="button">{children}</button>;
+interface IButton {
+  children: React.ReactNode;
+  className?: string;
+  borderRadius?: 20 | 10;
+}
+
+const Button = ({ children, className, borderRadius = 10 }: IButton) => {
+  return (
+    <button
+      type="button"
+      style={{ borderRadius: `${borderRadius}px` }}
+      className={`${styles.button} ${className}`}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;

@@ -6,7 +6,7 @@ type TProps = TIconProps & {
   className?: string;
 };
 
-export default function FawIcon({
+export default function FavIcon({
   height = "30",
   fill = "#FF868E",
   ...props

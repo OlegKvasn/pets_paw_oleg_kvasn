@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 
-.imgButton:hover {
+.container:hover .imgButton {
   border: 4px solid var(--background-primary);
   transition: all 0.5s ease;
 }
@@ -52,7 +52,7 @@
   transition: all 1s ease;
 }
 
-.bottomButton:hover {
+.container:hover .bottomButton {
   background-color: var(--color-pink-light);
   transition: all 0.5s ease;
 }
