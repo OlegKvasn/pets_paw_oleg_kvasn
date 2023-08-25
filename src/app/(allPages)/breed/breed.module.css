@@ -1,0 +1,102 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+  position: relative;
+}
+.buttons {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.backButton {
+  background-color: var(--background-pink);
+}
+
+.breedsButton {
+  background-color: var(--background-pink);
+  color: var(--color-pink);
+  font-size: 20px;
+  cursor: default !important;
+  cursor: pointer;
+}
+
+.backButton:hover,
+.breedsButton:hover {
+  background-color: var(--color-pink);
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.backButton:hover .icon {
+  fill: #fff;
+  transition: all 0.5s ease;
+}
+
+.idButton {
+  background-color: var(--color-pink);
+  color: #fff;
+  font-size: 20px;
+  cursor: default !important;
+}
+
+.imageContainer {
+  position: relative;
+  aspect-ratio: 64/40;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.desc {
+  margin: 20px;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+  border: 2px solid var(--background-pink);
+  border-radius: var(--border-radius);
+}
+.title {
+  font-size: 36px;
+  font-weight: var(--font-weight-primary);
+  position: absolute;
+  top: -65px;
+  padding: 0 30px;
+  background-color: var(--background-secondary);
+}
+.subTitle {
+  font-size: 20px;
+  font-weight: var(--font-weight-primary);
+  color: var(--color-gray);
+}
+
+.details {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.details span {
+  color: var(--color-gray);
+  font-weight: var(--font-weight-secondary);
+}
+
+.left {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.right {
+  margin-left: 20px;
+  flex: 1;
+}

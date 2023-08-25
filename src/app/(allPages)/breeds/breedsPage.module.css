@@ -18,6 +18,7 @@
 }
 
 .sortButton {
+  height: 40px;
   background-color: var(--background-primary);
   border: 2px solid transparent;
 }

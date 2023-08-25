@@ -1,0 +1,93 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+.buttons {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.twoButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.uploadButton {
+  background-color: var(--background-pink);
+}
+
+.uploadButton span {
+  color: var(--color-pink);
+}
+
+.uploadButton:hover .uploadIcon,
+.uploadButton:hover span {
+  fill: #fff;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.uploadButton:hover {
+  background-color: var(--color-pink);
+}
+
+.form {
+  margin: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background-color: var(--background-primary);
+  border-radius: var(--border-radius-small);
+}
+
+.form label {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 10px;
+  font-weight: var(--font-weight-primary);
+  color: var(--color-gray);
+}
+
+.item {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.lastItem {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.select {
+  height: 40px;
+  background-color: var(--background-secondary) !important;
+  color: var(--text-color-primary) !important;
+}
+
+.updateButton {
+  align-self: flex-end;
+  height: 40px;
+  background-color: var(--background-secondary);
+  border: 2px solid transparent;
+}
+
+.updateButton:hover {
+  background-color: var(--color-pink);
+}
+
+.updateButton:hover .updateIcon {
+  fill: #fff;
+  transition: all 0.5s ease;
+}

@@ -16,10 +16,11 @@
   background-color: var(--color-pink);
   color: #fff;
   font-size: 20px;
+  cursor: default !important;
 }
 
-.navButton:hover {
+/* .navButton:hover {
   background-color: var(--background-pink);
   transition: all 0.5s ease;
   color: var(--text-color-primary);
-}
+}  */
