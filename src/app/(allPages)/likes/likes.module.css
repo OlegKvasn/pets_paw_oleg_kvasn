@@ -1,0 +1,13 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+.buttons {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+}

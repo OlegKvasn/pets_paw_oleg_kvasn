@@ -15,11 +15,11 @@
   transition: all 0.5s ease;
 }
 
-.button:active {
+.button[data-active="true"] {
   background-color: var(--color-pink);
   transition: all 0.5s ease;
 }
 
-.icon:active {
+.icon[data-active="true"] {
   fill: #fff;
 }

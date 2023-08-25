@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./navigateButton.module.css";
 import Link from "next/link";
@@ -17,6 +20,10 @@ const NavigateButton = ({
   name,
   ...props
 }: INavigateButton) => {
+  const pathname = usePathname();
+
+  const isActive = pathname === `/${name}`;
+
   return (
     <li className={styles.mainContainer}>
       <Link className={styles.container} href={`/${name}`}>
@@ -26,6 +33,7 @@ const NavigateButton = ({
             backgroundColor: `${backgroundColor}`,
           }}
           className={`${styles.imgButton} ${props.className}`}
+          data-active={isActive}
           {...props}
         >
           <div className={styles.imageContainer}>
@@ -38,7 +46,11 @@ const NavigateButton = ({
             ></Image>
           </div>
         </button>
-        <button className={styles.bottomButton} type="button">
+        <button
+          className={styles.bottomButton}
+          data-active={isActive}
+          type="button"
+        >
           {name}
         </button>
       </Link>
