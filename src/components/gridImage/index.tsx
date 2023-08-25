@@ -4,28 +4,52 @@ import Grid from "../grid";
 import Link from "next/link";
 import IconButton from "@/ui/iconButton";
 import FavIcon from "@/ui/icons/fav";
+import { TBreedImage } from "@/types/theCatApi";
+import useSWR from "swr";
+import { fetcher } from "@/utils/api";
 
 const GridImage = ({
-  src,
-  alt,
+  name,
   isLink,
+  breedId,
 }: {
-  src: string;
-  alt: string;
+  name: string;
   isLink: boolean;
+  breedId: string;
 }) => {
+  const { data } = useSWR<TBreedImage[]>(
+    `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`,
+    fetcher
+  );
+
   return (
     <Grid.Item className={styles.imageContainer}>
       {isLink ? (
-        <Link href="/">
+        <Link href={`/breeds/${breedId}`}>
           {" "}
-          <Image className={styles.image} src={src} alt={alt} fill priority />
-          <p className={styles.title}>{alt}</p>
+          {data ? (
+            <Image
+              className={styles.image}
+              src={data[0].url}
+              alt={name}
+              fill
+              priority
+            />
+          ) : null}
+          <p className={styles.title}>{name}</p>
         </Link>
       ) : (
         <>
           {" "}
-          <Image className={styles.image} src={src} alt={alt} fill priority />
+          {data ? (
+            <Image
+              className={styles.image}
+              src={data[0].url}
+              alt={name}
+              fill
+              priority
+            />
+          ) : null}
           <IconButton className={styles.iconButton}>
             <FavIcon height={18} />
           </IconButton>

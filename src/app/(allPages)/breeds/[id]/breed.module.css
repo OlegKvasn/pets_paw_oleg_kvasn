@@ -74,6 +74,7 @@
   background-color: var(--background-secondary);
 }
 .subTitle {
+  margin: 20px;
   font-size: 20px;
   font-weight: var(--font-weight-primary);
   color: var(--color-gray);
@@ -97,6 +98,9 @@
 }
 
 .right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-left: 20px;
   flex: 1;
 }

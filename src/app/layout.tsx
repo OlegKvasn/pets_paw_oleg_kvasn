@@ -6,7 +6,7 @@ import { Jost } from "next/font/google";
 const jost = Jost({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pets Paw App",
+  title: "Pets Paw",
   description: "Created by Oleg Kvasnytskyi",
 };
 

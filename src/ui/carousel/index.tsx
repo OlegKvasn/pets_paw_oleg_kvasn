@@ -1,16 +1,12 @@
 "use client";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import styles from "./carousel.module.scss";
 import Image from "next/image";
+import { TBreedImage } from "@/types/theCatApi";
 
-interface Images {
-  src: string;
-  title: string;
-}
-
-const ResponsiveCarousel = ({ images }: { images: Images[] }) => {
+const ResponsiveCarousel = ({ images }: { images: TBreedImage[] }) => {
   return (
     <Carousel
       className={styles.carousel}
@@ -25,8 +21,8 @@ const ResponsiveCarousel = ({ images }: { images: Images[] }) => {
       centerSlidePercentage={100}
     >
       {images.map((img, idx: number) => (
-        <div key={`${idx}-${img.title}`} className={styles.responsiveImage}>
-          <Image alt={img.title} src={img.src} fill objectFit="cover" />
+        <div key={`${idx}-${img.id}`} className={styles.responsiveImage}>
+          <Image alt={img.id} src={img.url} fill objectFit="cover" />
         </div>
       ))}
     </Carousel>
