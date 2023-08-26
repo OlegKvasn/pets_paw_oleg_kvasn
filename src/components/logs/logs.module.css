@@ -35,3 +35,11 @@
   font-weight: var(--font-weight-primary);
   color: var(--text-color-primary);
 }
+
+.likeIcon {
+  fill: var(--color-green);
+}
+
+.dislikeIcon {
+  fill: var(--color-yellow);
+}

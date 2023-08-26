@@ -8,14 +8,19 @@ import Logs from "@/components/logs";
 import { TBreedImage } from "@/types/theCatApi";
 import { fetcher } from "@/utils/api";
 import useSWR from "swr";
-import { useState } from "react";
-import { createLog } from "@/utils/log";
+import { useEffect, useState } from "react";
+import { TLog, createLog } from "@/utils/log";
 
 // const { CAT_API_ID, CAT_API_KAY } = process.env;
 
 const VotingPage = () => {
   const [isFavorite, setFavorite] = useState(false);
   const [actualImageFavId, setId] = useState<string | null>(null);
+  const [logs, setLogs] = useState<TLog[]>([]);
+
+  useEffect(() => {
+    setLogs(JSON.parse(localStorage.getItem("logs") || "[]").reverse());
+  }, []);
 
   const { data, mutate } = useSWR<TBreedImage[], Error>(
     `https://api.thecatapi.com/v1/images/search`,
@@ -47,6 +52,7 @@ const VotingPage = () => {
             imageId[0].id,
             value === 1 ? "added to Likes" : "added to Dislikes"
           );
+          setLogs(JSON.parse(localStorage.getItem("logs") || "[]").reverse());
           mutate();
           console.log(res.message);
         });
@@ -78,6 +84,7 @@ const VotingPage = () => {
           setId(res.id);
           setFavorite(true);
           createLog(imageId[0].id, "added to Favorites");
+          setLogs(JSON.parse(localStorage.getItem("logs") || "[]").reverse());
           console.log(res.message);
         });
     } catch (err) {
@@ -107,6 +114,7 @@ const VotingPage = () => {
           setId(null);
           setFavorite(false);
           createLog(imageId[0].id, "removed from Favorites");
+          setLogs(JSON.parse(localStorage.getItem("logs") || "[]").reverse());
           console.log(res.message);
         });
     } catch (error) {
@@ -164,7 +172,7 @@ const VotingPage = () => {
           isFavActive={isFavorite}
         />
       </div>
-      <Logs />
+      <Logs logs={logs} />
     </section>
   );
 };

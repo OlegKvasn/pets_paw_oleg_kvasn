@@ -16,7 +16,7 @@ interface PagesProps {
 
 const LikesPage = ({ params }: PagesProps) => {
   const { data } = useSWR<TVotes[], Error>(
-    `https://api.thecatapi.com/v1/votes?limit=10&sub_id=OlegTest`,
+    `https://api.thecatapi.com/v1/votes?limit=20&order=DESC&sub_id=OlegTest`,
     fetchWithToken
   );
   const likedImages = data?.filter((img) => img.value > 0);

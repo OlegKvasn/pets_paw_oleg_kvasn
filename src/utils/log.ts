@@ -10,7 +10,7 @@ type TActions =
   | "added to Dislikes"
   | "removed from Favorites";
 
-type TLog = {
+export type TLog = {
   time: string;
   image: string;
   action: string;
