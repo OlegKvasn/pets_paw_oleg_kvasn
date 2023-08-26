@@ -44,3 +44,27 @@ export type TBreedImage = {
   width: number;
   height: number;
 };
+
+export type TVotes = {
+  id: number;
+  image_id: string;
+  sub_id: string;
+  created_at: string;
+  value: number;
+  country_code: string;
+  image: {
+    id: string;
+    url: string;
+  };
+};
+
+export type TFav = {
+  id: number;
+  image_id: string;
+  sub_id: string;
+  created_at: string;
+  image: {
+    id: string;
+    url: string;
+  };
+};

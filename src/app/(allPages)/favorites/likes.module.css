@@ -12,21 +12,3 @@
   display: flex;
   gap: 10px;
 }
-
-.imageContainer {
-  margin: 20px;
-  position: relative;
-  aspect-ratio: 64/36;
-}
-
-.image {
-  object-fit: cover;
-  border-radius: var(--border-radius);
-}
-
-.votingButtons {
-  position: absolute;
-  bottom: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-}

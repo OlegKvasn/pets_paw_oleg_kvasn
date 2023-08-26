@@ -63,6 +63,7 @@ const BreedsPage = () => {
         </div>
       </form>
       <Grid>
+        {/* <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
         <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
         <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
         <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
@@ -71,8 +72,7 @@ const BreedsPage = () => {
         <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
         <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
         <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
-        <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
-        <GridImage src={testImage.src} alt={testImage.alt} isLink={false} />
+        <GridImage src={testImage.src} alt={testImage.alt} isLink={false} /> */}
       </Grid>
     </section>
   );

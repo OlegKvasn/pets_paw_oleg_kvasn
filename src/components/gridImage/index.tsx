@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./gridImage.module.css";
 import Image from "next/image";
 import Grid from "../grid";
@@ -12,13 +14,17 @@ const GridImage = ({
   name,
   isLink,
   breedId,
+  src,
 }: {
   name: string;
   isLink: boolean;
-  breedId: string;
+  breedId?: string;
+  src?: string;
 }) => {
   const { data } = useSWR<TBreedImage[]>(
-    `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`,
+    isLink
+      ? `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`
+      : `https://api.thecatapi.com/v1/images/search`,
     fetcher
   );
 
@@ -44,8 +50,8 @@ const GridImage = ({
           {data ? (
             <Image
               className={styles.image}
-              src={data[0].url}
-              alt={name}
+              src={src ? src : "/test-bengal.jpg"}
+              alt={name ? name : "/test"}
               fill
               priority
             />
