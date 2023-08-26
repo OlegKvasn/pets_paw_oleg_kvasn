@@ -7,6 +7,7 @@ interface IIconButton {
   padding?: 15 | 10;
   borderRadius?: 20 | 10;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 const IconButton = ({
@@ -15,11 +16,12 @@ const IconButton = ({
   padding = 10,
   borderRadius = 10,
   onClick,
+  type = "button",
 }: IIconButton) => {
   return (
     <button
       onClick={onClick}
-      type="button"
+      type={type}
       style={{ padding: `${padding}px`, borderRadius: `${borderRadius}px` }}
       className={`${styles.iconButton} ${className}`}
     >
