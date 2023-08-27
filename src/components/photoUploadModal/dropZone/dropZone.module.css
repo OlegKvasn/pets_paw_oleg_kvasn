@@ -23,6 +23,10 @@
   color: var(--color-gray);
 }
 
+.dropzone[data-error="error"] {
+  background: var(--background-upload), var(--background-pink);
+}
+
 .mainContainer span {
   font-weight: var(--font-weight-primary);
   color: var(--text-color-primary);

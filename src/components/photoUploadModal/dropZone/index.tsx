@@ -72,7 +72,11 @@ const DropzoneField = () => {
 
   return (
     <section className={styles.mainContainer}>
-      <div {...getRootProps()} className={styles.dropzone}>
+      <div
+        {...getRootProps()}
+        className={styles.dropzone}
+        data-error={!approved && isOpenStatusMessage ? "error" : "success"}
+      >
         <input {...getInputProps()} />
         {fileUrl ? (
           <div className={styles.imageContainer}>
