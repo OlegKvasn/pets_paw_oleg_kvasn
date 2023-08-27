@@ -14,6 +14,7 @@ import useSWR from "swr";
 import { TBreedImage, TBreeds } from "@/types/theCatApi";
 import { useState } from "react";
 import NoItemFound from "@/components/noItemFound";
+import PhotoUploadModal from "@/components/photoUploadModal";
 
 const initialQueryParams = {
   order: "RAND",
@@ -24,6 +25,7 @@ const initialQueryParams = {
 
 const BreedsPage = () => {
   const [queryParams, setQueryPrams] = useState(initialQueryParams);
+  const [modalOpen, setModalOpen] = useState(false);
   const { order, type, breeds, limit } = queryParams;
 
   const imageUrl = `https://api.thecatapi.com/v1/images/search?limit=${limit}&mime_types=${type}&order=${order}&breed_ids=${breeds}&api_key=live_xkmTWHDiWCfoRWZ76onuP8ygd7eAQV89obHlrIIL0Ec3bo2WCUAnSptpeVW9Eq8Y`;
@@ -40,11 +42,18 @@ const BreedsPage = () => {
 
   return (
     <section className={styles.mainContainer}>
+      <PhotoUploadModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
       <div className={styles.buttons}>
         <div className={styles.twoButtons}>
           <TwoButtons pageName="gallery" />
         </div>
-        <Button className={styles.uploadButton}>
+        <Button
+          className={styles.uploadButton}
+          onClick={() => setModalOpen(true)}
+        >
           <UploadIcon className={styles.uploadIcon} />
           <span>upload</span>
         </Button>

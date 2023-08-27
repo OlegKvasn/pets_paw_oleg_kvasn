@@ -127,6 +127,7 @@ const GridImage = ({
               src={data[0].url}
               alt={name}
               fill
+              sizes="(max-width:1060px) 640px,800px"
               priority
             />
           ) : null}
@@ -139,6 +140,7 @@ const GridImage = ({
             src={src ? src : "/test-bengal.jpg"}
             alt={name ? name : "/test"}
             fill
+            sizes="(max-width:1060px) 640px,800px"
             priority
           />
           <IconButton className={styles.iconButton} onClick={handleClick}>

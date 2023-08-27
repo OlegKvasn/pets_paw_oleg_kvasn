@@ -6,6 +6,7 @@
   background-color: var(--background-secondary);
   border-radius: var(--border-radius);
   margin-top: 10px;
+  position: relative;
 }
 .buttons {
   margin: 20px;

@@ -42,6 +42,7 @@ const NavigateButton = ({
               src={src}
               alt={alt}
               fill
+              sizes="(max-width:640px) 640px"
               priority
             ></Image>
           </div>
