@@ -7,6 +7,7 @@ import GridImage from "@/components/gridImage";
 import { fetchWithToken } from "@/utils/api";
 import useSWR from "swr";
 import { TFav } from "@/types/theCatApi";
+import NoItemFound from "@/components/noItemFound";
 
 // const { CAT_API_ID, CAT_API_KAY } = process.env;
 
@@ -23,17 +24,17 @@ const FavoritePage = () => {
       </div>
       <Grid>
         {data
-          ? data.map((breed) => (
+          ? data.map((image) => (
               <GridImage
-                key={breed.image_id}
-                breedId={breed.image_id}
-                name={breed.image_id}
-                src={breed.image.url}
+                key={image.image_id}
+                name={image.image_id}
+                src={image.image.url}
                 isLink={false}
               />
             ))
           : null}
       </Grid>
+      {data && data.length < 1 ? <NoItemFound /> : null}
     </section>
   );
 };

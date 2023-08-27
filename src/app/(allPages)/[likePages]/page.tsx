@@ -7,6 +7,7 @@ import GridImage from "@/components/gridImage";
 import { fetchWithToken } from "@/utils/api";
 import useSWR from "swr";
 import { TVotes } from "@/types/theCatApi";
+import NoItemFound from "@/components/noItemFound";
 
 // const { CAT_API_ID, CAT_API_KAY } = process.env;
 
@@ -38,32 +39,38 @@ const LikesPage = ({ params }: PagesProps) => {
       {params.likePages === "likes" ? (
         <Grid>
           {likedImages
-            ? likedImages.map((breed) => (
+            ? likedImages.map((image) => (
                 <GridImage
-                  key={breed.image_id}
-                  breedId={breed.image_id}
-                  name={breed.image_id}
-                  src={breed.image.url}
+                  key={image.image_id}
+                  name={image.image_id}
+                  src={image.image.url}
                   isLink={false}
                 />
               ))
             : null}
         </Grid>
       ) : null}
+      {params.likePages === "likes" && likedImages && likedImages.length < 1 ? (
+        <NoItemFound />
+      ) : null}
       {params.likePages === "dislikes" ? (
         <Grid>
           {dislikedImages
-            ? dislikedImages.map((breed) => (
+            ? dislikedImages.map((image) => (
                 <GridImage
-                  key={breed.image_id}
-                  breedId={breed.image_id}
-                  name={breed.image_id}
-                  src={breed.image.url}
+                  key={image.image_id}
+                  name={image.image_id}
+                  src={image.image.url}
                   isLink={false}
                 />
               ))
             : null}
         </Grid>
+      ) : null}
+      {params.likePages === "dislikes" &&
+      dislikedImages &&
+      dislikedImages.length < 1 ? (
+        <NoItemFound />
       ) : null}
     </section>
   );

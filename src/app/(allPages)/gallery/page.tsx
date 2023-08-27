@@ -13,21 +13,20 @@ import { fetcher } from "@/utils/api";
 import useSWR from "swr";
 import { TBreedImage, TBreeds } from "@/types/theCatApi";
 import { useState } from "react";
+import NoItemFound from "@/components/noItemFound";
 
 const initialQueryParams = {
   order: "RAND",
   type: "jpg,gif,png",
-  breeds: "None",
+  breeds: "",
   limit: "10",
 };
 
 const BreedsPage = () => {
   const [queryParams, setQueryPrams] = useState(initialQueryParams);
   const { order, type, breeds, limit } = queryParams;
-  const imageUrl =
-    queryParams.breeds === "None"
-      ? `https://api.thecatapi.com/v1/images/search?limit=${limit}&mime_types=${type}&order=${order}&api_key=live_xkmTWHDiWCfoRWZ76onuP8ygd7eAQV89obHlrIIL0Ec3bo2WCUAnSptpeVW9Eq8Y`
-      : `https://api.thecatapi.com/v1/images/search?limit=${limit}&mime_types=${type}&order=${order}&breed_ids=${breeds}&api_key=live_xkmTWHDiWCfoRWZ76onuP8ygd7eAQV89obHlrIIL0Ec3bo2WCUAnSptpeVW9Eq8Y`;
+
+  const imageUrl = `https://api.thecatapi.com/v1/images/search?limit=${limit}&mime_types=${type}&order=${order}&breed_ids=${breeds}&api_key=live_xkmTWHDiWCfoRWZ76onuP8ygd7eAQV89obHlrIIL0Ec3bo2WCUAnSptpeVW9Eq8Y`;
 
   const images = useSWR<TBreedImage[], Error>(imageUrl, fetcher);
   const breedsList = useSWR<TBreeds[], Error>(
@@ -85,7 +84,7 @@ const BreedsPage = () => {
             id="breeds"
             onChange={handleChange}
           >
-            <Select.Option value={"None"}>{"None"}</Select.Option>
+            <Select.Option value={""}>{"None"}</Select.Option>
             {breedsList.data
               ? breedsList.data.map((breed) => (
                   <Select.Option key={breed.id} value={breed.id}>
@@ -131,6 +130,7 @@ const BreedsPage = () => {
             ))
           : null}
       </Grid>
+      {images.data && images.data.length < 1 ? <NoItemFound /> : null}
     </section>
   );
 };
