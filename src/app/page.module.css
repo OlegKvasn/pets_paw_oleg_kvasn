@@ -23,3 +23,19 @@
 .image {
   object-fit: cover;
 }
+
+.nav {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .main {
+    display: none;
+  }
+  .nav {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+}

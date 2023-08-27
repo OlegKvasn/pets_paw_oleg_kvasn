@@ -42,3 +42,19 @@
   flex-direction: row;
   gap: 12px;
 }
+
+@media screen and (max-width: 1023px) {
+  .header {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mainContainer {
+    width: 100%;
+    margin: 0;
+  }
+  .nav {
+    flex-direction: column;
+  }
+}

@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .gridItem:nth-child(1) {
     grid-row: span 2;
   }
@@ -49,7 +49,7 @@
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   .gridContainer {
     grid-template-columns: repeat(1, 1fr);
   }

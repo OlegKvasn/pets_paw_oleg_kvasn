@@ -1,0 +1,41 @@
+.burgerButton {
+  display: none !important;
+  background-color: var(--background-secondary);
+}
+
+.closeButton {
+  background-color: var(--background-secondary);
+}
+
+.container {
+  position: fixed;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.menuContent {
+  position: absolute;
+  z-index: 111;
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-primary);
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px;
+  margin: 20px; */
+}
+
+@media screen and (max-width: 1023px) {
+  .burgerButton {
+    display: flex !important;
+  }
+  .nav {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+}

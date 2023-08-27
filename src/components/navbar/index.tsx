@@ -5,9 +5,9 @@ import PetsPawIcon from "@/ui/icons/petsPaw";
 import ThemeToggle from "@/ui/themeToggle";
 import NavigateButton from "@/ui/navigateButton";
 
-const Navigation = () => {
+const Navigation = ({ className }: { className?: string }) => {
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${className}`}>
       <section className={styles.mainContainer}>
         <div className={styles.top}>
           <Link className={styles.logo} href="/">
