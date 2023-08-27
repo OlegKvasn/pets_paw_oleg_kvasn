@@ -4,6 +4,7 @@ import Grid from "@/components/grid";
 import GridImage from "@/components/gridImage";
 import { TBreedImage, TBreeds, TFav } from "@/types/theCatApi";
 import NoItemFound from "@/components/noItemFound";
+import Link from "next/link";
 
 export const metadata = {
   title: "Search - Pets Paw",
@@ -51,6 +52,14 @@ const SearchPage = async ({
       <p className={styles.message}>
         Search results for: <span>{searchQuery}</span>
       </p>
+      {singleBreed ? (
+        <p className={styles.message}>
+          See breed:{" "}
+          <Link href={`/${singleBreed.id}`}>
+            <span>{singleBreed.name}</span>
+          </Link>
+        </p>
+      ) : null}
       <Grid>
         {images
           ? images.map((image) => (
