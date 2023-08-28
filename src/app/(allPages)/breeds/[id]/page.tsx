@@ -23,7 +23,7 @@ export async function generateMetadata(
   };
 }
 
-export async function getBreedDesc(breed_ids: string): Promise<TBreeds> {
+async function getBreedDesc(breed_ids: string): Promise<TBreeds> {
   const data = await fetch(`https://api.thecatapi.com/v1/breeds/${breed_ids}`);
   if (!data.ok) {
     throw new Error("Failed to fetch description");
@@ -31,9 +31,7 @@ export async function getBreedDesc(breed_ids: string): Promise<TBreeds> {
   return data.json();
 }
 
-export async function getBreedImages(
-  breed_ids: string
-): Promise<TBreedImage[]> {
+async function getBreedImages(breed_ids: string): Promise<TBreedImage[]> {
   const data = await fetch(
     `https://api.thecatapi.com/v1/images/search?limit=5&breed_ids=${breed_ids}&api_key=${CAT_API_KAY}`
   );
