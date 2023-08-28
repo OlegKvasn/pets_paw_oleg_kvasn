@@ -12,7 +12,7 @@ export const metadata = {
 
 const { CAT_API_KAY } = process.env;
 
-export async function getImages(breedId: string): Promise<TBreedImage[]> {
+async function getImages(breedId: string): Promise<TBreedImage[]> {
   const data = await fetch(
     `https://api.thecatapi.com/v1/images/search?limit=20&breed_ids=${breedId}&api_key=${CAT_API_KAY}`,
     { cache: "no-cache" }
@@ -22,7 +22,7 @@ export async function getImages(breedId: string): Promise<TBreedImage[]> {
   }
   return data.json();
 }
-export async function getBreeds(): Promise<TBreeds[]> {
+async function getBreeds(): Promise<TBreeds[]> {
   const data = await fetch(`https://api.thecatapi.com/v1/breeds`);
   if (!data.ok) {
     throw new Error("Failed to fetch description");
