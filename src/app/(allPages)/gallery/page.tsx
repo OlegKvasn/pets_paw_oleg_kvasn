@@ -40,6 +40,11 @@ const BreedsPage = () => {
     setQueryPrams({ ...queryParams, [target.name]: target.value });
   };
 
+  const handleUpdate = () => {
+    setQueryPrams(initialQueryParams);
+    images.mutate();
+  };
+
   return (
     <section className={styles.mainContainer}>
       <PhotoUploadModal
@@ -119,10 +124,7 @@ const BreedsPage = () => {
               <Select.Option value={"20"}>{"20 items per page"}</Select.Option>
             </Select>
           </fieldset>
-          <IconButton
-            className={styles.updateButton}
-            onClick={() => images.mutate()}
-          >
+          <IconButton className={styles.updateButton} onClick={handleUpdate}>
             <UpdateIcon className={styles.updateIcon} />
           </IconButton>
         </div>

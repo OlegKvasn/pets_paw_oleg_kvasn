@@ -14,7 +14,7 @@ const Navigation = ({ className }: { className?: string }) => {
             <LogoIcon />
             <PetsPawIcon />
           </Link>
-          <ThemeToggle />
+          <ThemeToggle className={styles.theme} />
         </div>
         <article className={styles.article}>
           <h1>Hi!👋</h1>

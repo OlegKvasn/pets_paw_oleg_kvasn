@@ -52,3 +52,21 @@
 .container a {
   color: var(--color-pink);
 }
+
+@media screen and (max-width: 1023px) {
+  .modalContent {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container h1 {
+    font-size: 20px;
+  }
+  .modalContent {
+    height: 80vh;
+  }
+  .modalOverlay {
+    background-color: var(--background-modal);
+  }
+}

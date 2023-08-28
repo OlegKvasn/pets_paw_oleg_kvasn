@@ -43,3 +43,14 @@
 .dislikeIcon {
   fill: var(--color-yellow);
 }
+
+@media screen and (max-width: 767px) {
+  .leftSide {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .log {
+    align-items: flex-start;
+  }
+}

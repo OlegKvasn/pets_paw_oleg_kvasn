@@ -30,3 +30,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media screen and (max-width: 767px) {
+  .votingButtons {
+    bottom: -20%;
+  }
+}

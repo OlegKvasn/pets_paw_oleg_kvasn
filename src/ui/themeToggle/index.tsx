@@ -7,7 +7,7 @@ import ThemeToggleIcon from "@/ui/icons/themeToggle";
 import { useEffect, useState } from "react";
 
 type mode = "light" | "dark";
-const ThemeToggle = () => {
+const ThemeToggle = ({ className }: { className?: string }) => {
   // const { toggle, mode } = useContext(ThemeContext);
   const [mode, setMode] = useState<mode>("light");
 
@@ -20,7 +20,7 @@ const ThemeToggle = () => {
   }, [mode]);
 
   return (
-    <section className={styles.mainContainer}>
+    <section className={`${styles.mainContainer} ${className}`}>
       <div className={styles.iconContainer}>
         <ThemeIcon theme={mode} />
       </div>

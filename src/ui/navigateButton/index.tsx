@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./navigateButton.module.css";
 import Link from "next/link";
+import { MouseEventHandler } from "react";
 
 interface INavigateButton {
   className?: string;
@@ -11,6 +12,7 @@ interface INavigateButton {
   src: string;
   alt: string;
   name: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const NavigateButton = ({
@@ -18,6 +20,7 @@ const NavigateButton = ({
   alt,
   backgroundColor,
   name,
+  onClick,
   ...props
 }: INavigateButton) => {
   const pathname = usePathname();
@@ -34,6 +37,7 @@ const NavigateButton = ({
           }}
           className={`${styles.imgButton} ${props.className}`}
           data-active={isActive}
+          onClick={onClick}
           {...props}
         >
           <div className={styles.imageContainer}>
@@ -51,6 +55,7 @@ const NavigateButton = ({
           className={styles.bottomButton}
           data-active={isActive}
           type="button"
+          onClick={onClick}
         >
           {name}
         </button>

@@ -1,8 +1,6 @@
 import { Suspense } from "react";
 import styles from "./allPages.module.css";
-import SearchBar from "@/ui/searchBar";
-import NavigateLink from "@/ui/navigateLink";
-import MobileMenu from "@/components/mobileMenu";
+import TopNavigation from "@/components/topNavigation";
 
 export default function SearchLayout({
   children,
@@ -12,15 +10,7 @@ export default function SearchLayout({
   return (
     <Suspense>
       <main className={styles.main}>
-        <nav className={styles.container}>
-          <MobileMenu />
-          <SearchBar />
-          <ul className={styles.nav}>
-            <NavigateLink type="likes" />
-            <NavigateLink type="favorites" />
-            <NavigateLink type="dislikes" />
-          </ul>
-        </nav>
+        <TopNavigation />
         {children}
       </main>
     </Suspense>

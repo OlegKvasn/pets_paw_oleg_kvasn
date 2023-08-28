@@ -34,3 +34,16 @@
 .sortButton:hover .sortIcon {
   fill: var(--color-pink);
 }
+
+@media screen and (max-width: 767px) {
+  .buttons {
+    flex-wrap: wrap;
+  }
+  .selectBreeds {
+    height: 40px;
+    width: 100% !important;
+  }
+  .selectLimit {
+    width: 60%;
+  }
+}

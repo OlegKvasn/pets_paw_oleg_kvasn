@@ -44,6 +44,9 @@
 }
 
 @media screen and (max-width: 1023px) {
+  .theme {
+    display: none !important;
+  }
   .header {
     display: none;
   }
