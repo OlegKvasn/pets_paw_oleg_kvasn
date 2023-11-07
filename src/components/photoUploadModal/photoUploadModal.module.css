@@ -64,7 +64,9 @@
     font-size: 20px;
   }
   .modalContent {
-    height: 80vh;
+    padding: 10px;
+    margin: 10px;
+    height: 100dvh;
   }
   .modalOverlay {
     background-color: var(--background-modal);

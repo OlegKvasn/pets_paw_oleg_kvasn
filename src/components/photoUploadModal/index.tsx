@@ -22,7 +22,7 @@ const PhotoUploadModal = ({ isOpen, onClose }: PhotoUploadModalProps) => {
           <h1>Upload a .jpg or .png Cat Image</h1>
           <p>
             Any uploads must comply with the{" "}
-            <Link href="https://thecatapi.com/privacy">upload guidelines</Link>
+            <Link href="https://thecatapi.com/privacy">upload guidelines </Link>
             or face deletion.
           </p>
           <DropzoneField />

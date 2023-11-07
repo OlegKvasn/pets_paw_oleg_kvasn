@@ -26,10 +26,9 @@ const DropzoneField = () => {
 
   const handleUpload = async () => {
     const response = await upload(file);
-    setApproved(response.approved);
+    setApproved(response ? response.approved : null);
     setFileUrl(null);
     setOpenStatusMessage(true);
-    console.log(response.approved);
   };
 
   return (

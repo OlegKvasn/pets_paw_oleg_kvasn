@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getErrorMessage } from "./getErrorMessage";
 
 const upload = async (file: File | null) => {
   if (!file) {
@@ -8,6 +9,8 @@ const upload = async (file: File | null) => {
   const formData = new FormData();
   formData.append("file", file);
   formData.append("sub_id", "OlegTest");
+
+  let data;
 
   try {
     const res = await axios.post(
@@ -21,11 +24,15 @@ const upload = async (file: File | null) => {
       }
     );
 
-    const data = res.data;
-    return data;
+    data = res.data;
   } catch (err) {
     console.log(err);
+    return {
+      error: getErrorMessage(err),
+    };
   }
+
+  return data;
 };
 
 export default upload;

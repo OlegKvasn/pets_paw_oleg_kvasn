@@ -56,3 +56,16 @@
     gap: 10px;
   }
 }
+
+@media screen and (max-width: 359px) {
+  .nav {
+    gap: 5px;
+  }
+
+  .buttonContainer {
+    gap: 5px;
+  }
+  .left {
+    gap: 5px;
+  }
+}

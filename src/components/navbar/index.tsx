@@ -18,7 +18,7 @@ const Navigation = ({ className }: { className?: string }) => {
         </div>
         <article className={styles.article}>
           <h1>Hi!👋</h1>
-          <p>Welcome to MacPaw Bootcamp 2023</p>
+          {/* <p>Welcome to MacPaw Bootcamp 2023</p> */}
         </article>
         <p>Lets start using The Cat API</p>
         <nav>
